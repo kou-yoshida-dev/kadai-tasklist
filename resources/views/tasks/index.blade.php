@@ -21,10 +21,16 @@
         
             @foreach($tasks as $task)
             <tr>
-            <td>{{$task->id}}</td>
-            <td>{{$task->content}}</td>
-            @endforeach
+            <td>
+            {!! link_to_route('tasks.show',$task->id,['task'=>$task->id],[])  !!}
+           
+        </td>
+        <td>
+             {!! $task->content  !!}
+        </td>
             </tr>
+            @endforeach
+            
         
         
         
@@ -34,22 +40,7 @@
 
 
 @endif
-<table>
-    <tr>
-        @foreach($tasks as $task)
-        <td>
-            {!! link_to_route('tasks.show',$task->id,['task'=>$task->id],[])  !!}
-           
-        </td>
-        <td>
-             {!! $task->content  !!}
-        </td>
-        @endforeach
-        
-    </tr>
-    
-    
-</table>
+
 
 
 
