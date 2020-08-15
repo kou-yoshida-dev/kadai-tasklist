@@ -5,12 +5,14 @@
         <tr>
             <td>id</td>
             <td>task</td>
+            <td>title</td>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>{{$task->id }}</td>
             <td>{{$task->content}}</td>
+            <td>{{$task->title}}</td>
         </tr>
     </tbody>
 </table>

@@ -41,6 +41,7 @@ class TasksController extends Controller
          $request->validate(['content' => 'required|max:255',]);
         
         $task = new Task;
+        $task->title = $request->title;
         $task->content = $request->content;
         $task->save();
         return redirect('/');
@@ -83,6 +84,7 @@ class TasksController extends Controller
         
         
         $task = Task::findOrfail($id);
+        $task->title = $request->title;
         $task->content = $request->content;
         $task->save();
         return redirect('/');

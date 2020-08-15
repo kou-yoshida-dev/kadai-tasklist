@@ -14,7 +14,8 @@
     <thead>
         <tr>
             <th>id</th>
-            <th>task</th>
+            <th>message</th>
+            <th>title</th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +27,10 @@
            
         </td>
         <td>
-             {!! $task->content  !!}
+             {{ $task->content  }}
+        </td>
+        <td>
+            {{$task->title}}
         </td>
             </tr>
             @endforeach
