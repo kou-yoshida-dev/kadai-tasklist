@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+@include('common.error_message')
+
 <h1>{{$task->id}}の詳細ページ</h1>
 
 

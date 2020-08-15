@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
+
+@include('common.error_message')
+
+
 {!! Form::model($task,['route'=>'tasks.store'])   !!}
 {!! Form::label('content','メッセージ')    !!}
 {!! Form::text('content', null, ['class'=>'form-control'])    !!}
