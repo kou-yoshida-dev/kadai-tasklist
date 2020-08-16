@@ -14,8 +14,8 @@
     <thead>
         <tr>
             <th>id</th>
-            <th>message</th>
-            <th>title</th>
+            <th>task</th>
+            
             <th>status</th>
         </tr>
     </thead>
@@ -30,9 +30,7 @@
         <td>
              {{ $task->content  }}
         </td>
-        <td>
-            {{$task->title}}
-        </td>
+        
         <td>
             {{$task->status}}
         </td>
