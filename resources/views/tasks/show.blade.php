@@ -4,8 +4,9 @@
     <thead>
         <tr>
             <td>id</td>
-            <td>task</td>
+            <td>message</td>
             <td>title</td>
+            <td>status</td>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
             <td>{{$task->id }}</td>
             <td>{{$task->content}}</td>
             <td>{{$task->title}}</td>
+            <td>{{$task->status}}</td>
         </tr>
     </tbody>
 </table>

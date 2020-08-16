@@ -16,6 +16,7 @@
             <th>id</th>
             <th>message</th>
             <th>title</th>
+            <th>status</th>
         </tr>
     </thead>
     <tbody>
@@ -32,6 +33,10 @@
         <td>
             {{$task->title}}
         </td>
+        <td>
+            {{$task->status}}
+        </td>
+        
             </tr>
             @endforeach
             
