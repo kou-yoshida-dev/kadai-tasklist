@@ -49,7 +49,7 @@
 @endif
 
 
-
+{{$tasks->links()}}
 
 
 
