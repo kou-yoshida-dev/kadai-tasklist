@@ -11,19 +11,24 @@ class TaskTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tasks')->insert([
-            
-            'content'=>'aaaa',
-            'title'=>'atitle',
-            'status'=>'comp'
-            
+        
+        
+        for($i = 1; $i <= 100; $i++) {
+            DB::table('tasks')->insert([
+                'content' => 'test title ' . $i,
+                'status' => 'test content ' . $i
             ]);
-            
-        DB::table('tasks')->insert([
-            'content'=>'bbbb',
-            'title'=>'btitle',
-            'status'=>'yet'
-            ]);
+        }
+        
+     
+     
+     
+     
+        
+        
+        
+     
+        
             
     }
 }
