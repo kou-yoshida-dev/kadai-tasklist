@@ -60,7 +60,12 @@ class TasksController extends Controller
     {
      
         $task=Task::findOrfail($id);
-        return view('tasks.show',['task'=>$task]);
+        
+        if($task->user_id==Auth::user()->id){
+            return view('tasks.show',['task'=>$task]);
+        }else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -72,7 +77,10 @@ class TasksController extends Controller
     public function edit($id)
     {
         $task = Task::findOrfail($id);
-        return view('tasks.edit',['task'=>$task]);
+        if($task->user_id==Auth::user()->id){
+            return view('tasks.edit',['task'=>$task]);
+        }
+        return redirect('/');
     }
 
     /**
