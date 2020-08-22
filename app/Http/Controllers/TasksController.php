@@ -89,10 +89,18 @@ class TasksController extends Controller
         
         $task = Task::findOrfail($id);
         
-        $task->content = $request->content;
-        $task->status = $request->status;
-        $task->save();
-        return redirect('/');
+        if($task->user_id==Auth::user()->id){
+            $task->content = $request->content;
+            $task->status = $request->status;
+            $task->save();
+            return redirect('/');
+            
+        }else{
+            return redirect('/');
+        }
+        
+        
+        
         
     }
 
@@ -105,7 +113,11 @@ class TasksController extends Controller
     public function destroy($id)
     {
         $task = Task::findOrfail($id);
-        $task->delete();
+        if($task->user_id==Auth::user()->id){
+            $task->delete();
         return redirect('/');
+        }else{
+            return redirect('/');
+        }
     }
 }
