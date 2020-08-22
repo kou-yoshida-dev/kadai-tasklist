@@ -18,6 +18,7 @@
         </tr>
     </tbody>
 </table>
+@if(Auth::user()->id== $task->user_id)
 {!! link_to_route('tasks.edit','編集',['task'=>$task->id],['class'=>'btn btn-primary'])!!}
 
 {!! Form::model($task,['route'=>['tasks.destroy',$task->id], 'method'=>'delete','class'=>'mt-3'])!!}
@@ -25,4 +26,5 @@
 {!! Form::submit('削除',['class'=>'btn btn-primary'])!!}
 
 {!! Form::close()!!}
+@endif
 @endsection

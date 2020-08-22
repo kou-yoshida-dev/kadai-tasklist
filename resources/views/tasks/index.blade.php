@@ -23,7 +23,7 @@ username:{{Auth::user()->name}}
     </thead>
     <tbody>
         
-            @foreach($tasks as $task)
+            @foreach(Auth::user()->task as $task)
             <tr>
             <td>
             {!! link_to_route('tasks.show',$task->id,['task'=>$task->id],[])  !!}
