@@ -20,10 +20,19 @@
                 </button>
                 
                 <div class="collapse navbar-collapse" id="nav-bar">
+                    @if(Auth::check())
+                    <ul class="navbar-nav ">
+                    
+                    <li class="nav-item">{!! link_to_route('logout.get', 'Logout',[],['class'=>'btn btn-primary']) !!}</li>
+    
+                    </ul>
+                    
+                    
+                    @endif
+                    
+                    
                 
-                <ul class="navbar-nav ">
-                    <li class="nav-item">{!! link_to_route('tasks.create','追加',[],['class'=>'btn btn-primary'])   !!}</li>
-                </ul>
+                
                 </div>
                 
                 

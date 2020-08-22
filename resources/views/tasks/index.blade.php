@@ -2,13 +2,15 @@
 
 @section('content')
 
+
+
+
+
+@if(Auth::check())
+
+username:{{Auth::user()->name}}
+
 @if(count($tasks) > 0)
-
-
-
-    
-    
-
 
 <table class="table table-sm table-striped table-bordered">
     <thead>
@@ -45,15 +47,29 @@
 </table>
 
 
+@endif
+{!! link_to_route('tasks.create','追加',[],['class'=>'btn btn-primary'])!!}
+{{$tasks->links()}}
+@else
+
+
+
+
+
+<div class="row ">
+   
+    
+        {!! link_to_route('signup.get','signup',[],['class'=>'btn btn-primary btn-block mb-3'])  !!}
+        {!! link_to_route('login.get','login',[],['class'=>'btn btn-primary btn-block'])  !!}
+        
+   
+    
+        
+    
+</div>
+
+
 
 @endif
-
-
-{{$tasks->links()}}
-
-
-
-
-{!! link_to_route('tasks.create','追加',[],['class'=>'btn btn-primary'])   !!}
 
 @endsection

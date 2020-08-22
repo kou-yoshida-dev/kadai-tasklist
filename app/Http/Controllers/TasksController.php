@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use Auth;
 
 class TasksController extends Controller
 {
@@ -44,8 +45,9 @@ class TasksController extends Controller
        
         $task->status = $request->status;
         $task->content = $request->content;
+        $task->user_id=Auth::user()->id;
         $task->save();
-        return redirect('/');
+        return back();
     }
 
     /**
