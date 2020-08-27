@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+
 use Auth;
 
 class TasksController extends Controller
@@ -16,7 +17,8 @@ class TasksController extends Controller
     public function index()
     {
         $tasks = Task::orderBy('id','desc')->paginate(25);
-        return view('tasks.index',['tasks'=>$tasks]);
+        $users=\App\User::all();
+        return view('tasks.index',['tasks'=>$tasks,'users'=>$users]);
     }
 
     /**

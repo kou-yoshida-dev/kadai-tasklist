@@ -63,7 +63,9 @@ username:{{Auth::user()->name}}
         {!! link_to_route('login.get','login',[],['class'=>'btn btn-primary btn-block'])  !!}
         
    
-    
+    @foreach($users as $user)
+    <p>{{$user->name}}</p>
+    @endforeach
         
     
 </div>
